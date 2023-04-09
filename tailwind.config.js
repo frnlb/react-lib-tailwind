@@ -11,7 +11,7 @@ module.exports = {
     colors: {
       'bwhitish': '#f6f5f1',
       'bcream': '#f1e3da',
-      'bbrown': '#a5928e',
+      'bbrown': '	#a5928e',
       'bgray': '#b5aca3',
       'bgreen': '#51504b',
     },
