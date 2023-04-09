@@ -476,9 +476,10 @@ video {
 .contents {
   display: contents;
 }
+.bg-bbrown {
+  --tw-bg-opacity: 1;
+  background-color: rgb(165 146 142 / var(--tw-bg-opacity));
+}
 .p-20 {
   padding: 5rem;
-}
-.font-courier {
-  font-family: Courier Prime, serif;
 }
