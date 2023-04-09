@@ -476,14 +476,9 @@ video {
 .contents {
   display: contents;
 }
-.bg-blue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 182 255 / var(--tw-bg-opacity));
-}
-.bg-pink {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 73 219 / var(--tw-bg-opacity));
-}
 .p-20 {
   padding: 5rem;
+}
+.font-courier {
+  font-family: Courier Prime, serif;
 }
