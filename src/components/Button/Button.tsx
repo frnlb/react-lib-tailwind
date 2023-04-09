@@ -1,5 +1,5 @@
+import { cva, VariantProps } from "class-variance-authority";
 import React from 'react';
-import { cva}
 
 export interface ButtonProps {
     label?: string;
@@ -7,9 +7,18 @@ export interface ButtonProps {
     onClick?: ()=>{};
 }
 
-export const Button = ({label, color, variant, onClick}: ButtonProps) => {
+const button = cva("flex", {
+  variants: {
+    indent: {
+      primary: ["bg-blue"]
+    }
+  }
+})
+
+interface StyledButton extends ButtonProps, VariantProps<typeof button>{}
+export const Button = ({label, indent, onClick}: StyledButton) => {
   return (
-    <div>{label}</div>
+    <button className={button({indent})}>{label}</button>
   )
 }
 
