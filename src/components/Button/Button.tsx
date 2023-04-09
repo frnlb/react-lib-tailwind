@@ -7,7 +7,7 @@ export interface ButtonProps {
     onClick?: ()=>{};
 }
 
-const button = cva("flex", {
+const button = cva("flex font-courier", {
   variants: {
     indent: {
       primary: ["bg-blue"]
