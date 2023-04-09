@@ -9,19 +9,16 @@ module.exports = {
       xl: '1440px',
     },
     colors: {
-      'blue': '#1fb6ff',
-      'purple': '#7e5bef',
-      'pink': '#ff49db',
-      'orange': '#ff7849',
-      'green': '#13ce66',
-      'yellow': '#ffc82c',
-      'gray-dark': '#273444',
-      'gray': '#8492a6',
-      'gray-light': '#d3dce6',
+      'bwhitish': '#f6f5f1',
+      'bcream': '#f1e3da',
+      'bbrown': '#a5928e',
+      'bgray': '#b5aca3',
+      'bgreen': '#51504b',
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
+      courier: ['Courier Prime', 'serif'],
     },
     extend: {
       spacing: {
