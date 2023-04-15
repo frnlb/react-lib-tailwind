@@ -1,25 +1,28 @@
 import { cva, VariantProps } from "class-variance-authority";
-import React from 'react';
+import React from "react";
 
 export interface ButtonProps {
-    label?: string;
-    color?: string;
-    onClick?: ()=>{};
+  label?: string;
+  color?: string;
+  onClick?: () => {};
 }
 
-const button = cva("flex", {
+const button = cva("flex font-courier", {
   variants: {
     indent: {
-      primary: ["bg-bbrown"]
-    }
-  }
-})
+      primary: ["bg-bbrown text-bwhite"],
+      circle: ["bg-bbrown text-bwhite rounded-full"],
+    },
+  },
+});
 
-interface StyledButton extends ButtonProps, VariantProps<typeof button>{}
-export const Button = ({label, indent, onClick}: StyledButton) => {
+interface StyledButton extends ButtonProps, VariantProps<typeof button> {}
+export const Button = ({ label, indent, onClick }: StyledButton) => {
   return (
-    <button className={button({indent})}>{label}</button>
-  )
-}
+    <button onClick={onClick} className={button({ indent })}>
+      {label}
+    </button>
+  );
+};
 
 export default Button;
