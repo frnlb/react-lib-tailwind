@@ -24,6 +24,7 @@ module.exports = {
       bblue: "#82a7aa",
       gray: "#525252",
       brown: "#827469",
+      transparent: "transparent",
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],

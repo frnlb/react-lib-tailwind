@@ -120,6 +120,6 @@
       "@assets/*": ["src/assets"]
     }
   },
-  "include": ["src", "src/components", "src/types.d.ts"],
+  "include": ["src", "src/components", "types.d.ts"],
   "exclude": ["node_modules", "build", "dist"]
 }

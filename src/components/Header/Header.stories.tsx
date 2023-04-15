@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-// import logo from "../../assets/Font_F.svg";
-import * as icons from "../../assets/*.svg";
-import { Header } from "components";
+import logo from "../../assets/Font_F.svg";
+import { Header } from "../../components/Header/Header";
 
 const LINKS = [
   {
