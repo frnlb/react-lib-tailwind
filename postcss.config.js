@@ -4,12 +4,16 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-  {
-    name: "@storybook/addon-styling",
-    options: {
-      postCss: true,
-    }
-  }
-],
-  plugins: [require('tailwindcss'), require('autoprefixer')],
-}
+    {
+      name: "@storybook/addon-styling",
+      options: {
+        postCss: true,
+      },
+    },
+  ],
+  plugins: {
+    "postcss-import": {},
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
