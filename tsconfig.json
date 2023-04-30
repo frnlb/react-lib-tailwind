@@ -117,7 +117,8 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["src/components"],
-      "@assets/*": ["src/assets"]
+      "@assets/*": ["src/assets"],
+      "@utils/*": ["src/utils"]
     }
   },
   "include": ["src", "src/components", "types.d.ts"],

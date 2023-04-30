@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: "jit",
   content: [
     "./src/**/*.{html,js,ts,jsx,tsx}",
     "./src/components/**/**/*.{html,js,ts,jsx,tsx}",
@@ -25,6 +26,10 @@ module.exports = {
       gray: "#525252",
       brown: "#827469",
       transparent: "transparent",
+      orange: "#FD841F",
+      darkOrange: "#E14D2A",
+      red: "#CD104D",
+      purple: "#9C2C77",
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
