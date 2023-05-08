@@ -58,6 +58,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "class-variance-authority": "^0.5.1",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "postcss-cli": "^10.1.0",
     "rollup-plugin-includepaths": "^0.2.4"
   },
