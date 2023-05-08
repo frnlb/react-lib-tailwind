@@ -6,6 +6,9 @@ import packageJson from "./package.json" assert { type: "json" };
 import terser from "@rollup/plugin-terser";
 import importAssets from "rollup-plugin-import-assets";
 import includePaths from "rollup-plugin-includepaths";
+import postcss from 'rollup-plugin-postcss';
+import postcssImport from 'postcss-import';
+import autoprefixer from 'autoprefixer';
 
 let includePathOptions = {
   paths: ["src/lib", "src/*", "src/components"],
@@ -33,18 +36,24 @@ export default [
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),
       importAssets({
-        // files to import
         include: [/\.gif$/i, /\.jpg$/i, /\.png$/i, /\.svg$/i],
-        // files to exclude
         exclude: [],
-        // copy assets to output folder
         emitAssets: true,
-        // name pattern for the asset copied
         fileNames: "assets/[name]-[hash].[ext]",
-        // public path of the assets
         publicPath: "",
       }),
       includePaths(includePathOptions),
+      postcss({
+        plugins: [
+          postcssImport(),
+          autoprefixer(),
+        ],
+        extensions: ['.css'],
+        inject: true,
+        autoModules: true,
+        minimize: true,
+        sourceMap: true,
+      }),
     ],
   },
   {
