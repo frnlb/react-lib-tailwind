@@ -1,9 +1,10 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
 export interface HeaderProps {
   links: any[];
-  logo: any;
+  logo?: any;
+  children?: ReactNode | ReactNode[];
 }
 
 const header = cva("flex, w-screen", {
@@ -17,12 +18,13 @@ const header = cva("flex, w-screen", {
 
 interface StyledHeader extends HeaderProps, VariantProps<typeof header> {}
 
-export const Header = ({ links, logo, theme }: StyledHeader) => {
+export const Header = ({ links, logo, theme, children }: StyledHeader) => {
   return (
-    <div className="bg-pink p-20 font-courier border-dotted border-b-2">
+    <div className="p-20 border-b-2 border-dotted bg-pink font-courier">
       <img src={logo} alt="logo" />
-      {/* <div className="">{logo}</div> */}
-      <div className="">{links}</div>
+      <div className="">{links.map((link) => {
+        return(<a>{link}</a>)
+      })}</div>
     </div>
   );
 };
