@@ -17,3 +17,5 @@ export interface Container {
   children: React.ReactNode | React.ReactNode[];
   className: string;
 }
+
+export type Theme = "default" | "dark";

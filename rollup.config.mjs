@@ -6,9 +6,11 @@ import packageJson from "./package.json" assert { type: "json" };
 import terser from "@rollup/plugin-terser";
 import importAssets from "rollup-plugin-import-assets";
 import includePaths from "rollup-plugin-includepaths";
-import postcss from 'rollup-plugin-postcss';
-import postcssImport from 'postcss-import';
-import autoprefixer from 'autoprefixer';
+import postcss from "rollup-plugin-postcss";
+import postcssImport from "postcss-import";
+import autoprefixer from "autoprefixer";
+import alias from "@rollup/plugin-alias";
+import svgr from "@svgr/rollup";
 
 let includePathOptions = {
   paths: ["src/lib", "src/*", "src/components"],
@@ -31,6 +33,15 @@ export default [
       },
     ],
     plugins: [
+      alias({
+        resolve: [".jsx", ".js", ".ts", ".tsx"],
+        entries: [
+          {
+            find: "@components",
+            replacement: "./src/components",
+          },
+        ],
+      }),
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
@@ -44,16 +55,14 @@ export default [
       }),
       includePaths(includePathOptions),
       postcss({
-        plugins: [
-          postcssImport(),
-          autoprefixer(),
-        ],
-        extensions: ['.css'],
+        plugins: [postcssImport(), autoprefixer()],
+        extensions: [".css"],
         inject: true,
         autoModules: true,
         minimize: true,
         sourceMap: true,
       }),
+      svgr(),
     ],
   },
   {
