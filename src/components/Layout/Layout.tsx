@@ -1,5 +1,5 @@
 import React from "react";
-import { Colors, Container, LayoutWidth } from "types";
+import { Colors, Container, LayoutWidth } from "@types";
 import { cva, VariantProps } from "class-variance-authority";
 
 export interface LayoutProps extends Container {}
@@ -22,10 +22,14 @@ const layout = cva(
   }
 );
 
-interface StyledLayout extends LayoutProps, VariantProps<typeof layout> {}
+export interface StyledLayout
+  extends LayoutProps,
+    VariantProps<typeof layout> {}
 
-const Layout = ({ children, backgroundColor }: StyledLayout) => {
-  return <div className={layout({ backgroundColor })}>{children}</div>;
+const Layout = ({ children, backgroundColor, className }: StyledLayout) => {
+  return (
+    <div className={layout({ backgroundColor, className })}>{children}</div>
+  );
 };
 
 export default Layout;

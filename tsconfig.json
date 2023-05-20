@@ -114,13 +114,22 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components"],
-      "@assets/*": ["src/assets"],
-      "@utils/*": ["src/utils"]
+      "@*": ["./src/*"],
+      "@components": ["./src/components/index.ts"],
+      "@constants": ["./src/constants/index.ts"],
+      "@utils": ["./src/utils"],
+      "@types": ["./src/types"]
     }
   },
-  "include": ["src", "src/components", "types.d.ts"],
+  "include": [
+    "src",
+    "src/components",
+    "types.d.ts",
+    "src/**/*.ts",
+    "index.d.ts",
+    ""
+  ],
   "exclude": ["node_modules", "build", "dist"]
 }

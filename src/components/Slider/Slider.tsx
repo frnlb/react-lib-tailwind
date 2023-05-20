@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { timer } from "../../utils/utils";
-import { Button } from "../../stories/Button";
+import { Button } from "@components";
 
 export interface SliderProps {
   effect?: "drag" | "appear" | "fade";

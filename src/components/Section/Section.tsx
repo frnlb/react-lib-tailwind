@@ -1,6 +1,6 @@
 import React from "react";
 import { cva, VariantProps } from "class-variance-authority";
-import { Container } from "types";
+import { Container } from "@types";
 
 const section = cva("grid", {
   variants: {

@@ -13,4 +13,11 @@
     display: grid;
     grid-template-columns: 1fr min(65ch, 100%) 1fr;
   }
+
+  .logo-fill-black {
+    fill: #202020;
+  }
+  .logo-fill-white {
+    fill: #f1e3da;
+  }
 }

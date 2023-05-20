@@ -1,5 +1,6 @@
 import React from "react";
 import { cva, VariantProps } from "class-variance-authority";
+import { SliderChip } from "@components";
 
 export interface SliderCounterProps {
   index: number;
@@ -10,8 +11,8 @@ export interface SliderCounterProps {
 const sliderCounter = cva("flex", {
   variants: {
     intent: {
-        primary: ["bg-bblue"]
-    }
+      primary: ["bg-bblue"],
+    },
     color: {
       blue: ["bg-bblue"],
       green: ["bg-bgreen"],
@@ -20,19 +21,20 @@ const sliderCounter = cva("flex", {
   },
 });
 
-interface StyledSliderCounter
+export interface StyledSliderCounter
   extends SliderCounterProps,
     VariantProps<typeof sliderCounter> {}
 
 const SliderCounter = ({ index, type, total }: StyledSliderCounter) => {
-
-  return <div><div>
-        {total.forEach((item) => {
-            return (
-                <SliderChip/>
-            )
-        })}
-    </div></div>;
+  return (
+    <div>
+      <div>
+        {/* {total.forEach((item) => {
+          return <SliderChip />;
+        })} */}
+      </div>
+    </div>
+  );
 };
 
 export default SliderCounter;

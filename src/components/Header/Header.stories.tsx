@@ -1,27 +1,27 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import logo from "../../assets/Font_F.svg";
-import { Header } from "../../components/Header/Header";
+// import { ReactComponent as Logo } from "../../assets/fontF.svg";
+import { Logo, Header } from "@components";
 
 const LINKS = [
   {
-    name: "home",
-    slug: "/",
+    label: "home",
+    to: "/",
   },
   {
-    name: "blog",
-    slug: "/blog",
+    label: "blog",
+    to: "/blog",
   },
   {
-    name: "gallery",
-    slug: "/gallery",
+    label: "gallery",
+    to: "/gallery",
   },
   {
-    name: "others",
-    slug: "/others",
+    label: "others",
+    to: "/others",
   },
   {
-    name: "about",
-    slug: "/about-me",
+    label: "about",
+    to: "/about-me",
   },
 ];
 
@@ -32,15 +32,3 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {},
 } satisfies Meta<typeof Header>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-// More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
-export const Primary: Story = {
-  args: {
-    theme: "default",
-    links: LINKS,
-    logo: logo,
-  },
-};
