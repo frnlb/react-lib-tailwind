@@ -1,5 +1,5 @@
 import React from "react";
-import { Colors } from "types";
+import { Colors } from "@types";
 
 export interface ChipProps {
   backgroundColor: Colors;

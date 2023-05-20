@@ -24,5 +24,6 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     pictures: IMAGES,
+    time: 1000,
   },
 };

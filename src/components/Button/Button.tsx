@@ -1,11 +1,11 @@
 import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 
-export interface ButtonProps {
+interface ButtonProps {
   label?: string;
   onClick?: () => {} | any;
   className?: string;
-  icon?: HTMLImageElement | String | File;
+  icon?: string;
 }
 
 const button = cva("flex font-courier p-1 md:p-2", {
@@ -37,7 +37,9 @@ const button = cva("flex font-courier p-1 md:p-2", {
   },
 });
 
-interface StyledButton extends ButtonProps, VariantProps<typeof button> {}
+export interface StyledButton
+  extends ButtonProps,
+    VariantProps<typeof button> {}
 export const Button = ({
   label,
   icon,

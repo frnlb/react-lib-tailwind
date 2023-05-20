@@ -2,8 +2,8 @@ import React from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
 export interface SliderChipProps {
-  className: string;
-  current: boolean;
+  className?: string;
+  current?: boolean;
   label?: string | number;
 }
 
@@ -25,7 +25,7 @@ const sliderChip = cva("flex", {
   },
 });
 
-interface StyledSliderChip
+export interface StyledSliderChip
   extends SliderChipProps,
     VariantProps<typeof sliderChip> {}
 

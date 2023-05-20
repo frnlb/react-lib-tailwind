@@ -1,11 +1,10 @@
 import React, { ReactComponentElement, ReactNode } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { Link } from "@components";
-import { Theme } from "@types";
-export interface HeaderProps {
-  links: any[];
+import { Cta, Theme } from "@types";
+interface HeaderProps {
+  links: Cta[];
   logo?: React.ReactElement;
-  children?: ReactNode | ReactNode[];
   theme: Theme;
 }
 
@@ -35,20 +34,15 @@ export interface StyledHeader
   theme: "default" | "dark";
 }
 
-export const Header = ({
-  links,
-  logo,
-  theme = "default",
-  children,
-}: StyledHeader) => {
+export const Header = ({ links, logo, theme = "default" }: StyledHeader) => {
   return (
     <div className={header({ theme })}>
       {logo && addLogo(theme, logo)}
       <div className="inline-flex justify-evenly">
         {links?.map((link, index) => {
           return (
-            <Link to={link.link} key={index} type={"header"}>
-              {link.label}
+            <Link to={link.page?.slug ?? link.link} key={index} type={"header"}>
+              {link.page?.title ?? link.label}
             </Link>
           );
         })}

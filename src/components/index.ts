@@ -5,4 +5,5 @@ export { default as Slider } from "./Slider/Slider";
 export { default as Layout } from "./Layout/Layout";
 export { default as SideBar } from "./SideBar/SideBar";
 export { default as Link } from "./Link/Link";
+
 export * from "./Icons";

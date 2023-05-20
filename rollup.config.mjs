@@ -13,7 +13,7 @@ import alias from "@rollup/plugin-alias";
 import svgr from "@svgr/rollup";
 
 let includePathOptions = {
-  paths: ["src/lib", "src/*", "src/components"],
+  paths: ["src/lib", "src/*", "src/components", "src/components/*"],
   extensions: [".js", ".json", ".html", ".jsx", ".ts", ".tsx"],
 };
 
@@ -38,7 +38,7 @@ export default [
         entries: [
           {
             find: "@components",
-            replacement: "./src/components",
+            replacement: "./src/components/index.ts",
           },
         ],
       }),

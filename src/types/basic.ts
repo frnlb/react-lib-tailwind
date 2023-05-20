@@ -15,7 +15,7 @@ export type Colors =
 export type LayoutWidth = "large" | "narrow" | "medium";
 export interface Container {
   children: React.ReactNode | React.ReactNode[];
-  className: string;
+  className?: string;
 }
 
 export type Theme = "default" | "dark";

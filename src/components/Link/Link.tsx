@@ -18,13 +18,13 @@ const link = cva("inline-flex", {
 
 export interface StyledLink extends LinkProps, VariantProps<typeof link> {}
 
-const Link: React.FC<StyledLink> = ({
+export const Link: any = ({
   to,
   children,
   type,
   component: Component,
   ...props
-}) => {
+}: StyledLink) => {
   if (Component) {
     return (
       <Component to={to} {...props} className={link({ type })}>

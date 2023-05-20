@@ -43,3 +43,19 @@ export const Primary: Story = {
     children: LINKS[0].label,
   },
 };
+
+export const Dark: Story = {
+  args: {
+    to: LINKS[0].to,
+    children: LINKS[0].label,
+    type: "header",
+  },
+};
+
+export const Header: Story = {
+  args: {
+    to: LINKS[0].to,
+    children: LINKS[0].label,
+    type: "header",
+  },
+};
